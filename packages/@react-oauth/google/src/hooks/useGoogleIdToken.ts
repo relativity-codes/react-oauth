@@ -1,4 +1,4 @@
-import { useGoogleOAuth } from '@react-oauth/google';
+import { useGoogleOAuth } from './GoogleOAuthProvider';
 import { useCallback } from 'react';
 
 export const useGoogleIdToken = ({onSuccess}:any):unknown => {
