@@ -1,10 +1,10 @@
 import { useGoogleOAuth } from './GoogleOAuthProvider';
 import { useCallback } from 'react';
 
-export const useGoogleIdToken = ({onSuccess}:any):unknown => {
+export const useGoogleIdToken = ({onSuccess}:any) => {
   const { clientId, scriptLoadedSuccessfully } = useGoogleOAuth();
 
-  const login = useCallback(() => {
+  const login:()=>void = useCallback(() => {
     if (!scriptLoadedSuccessfully) {
       console.error("Google script not loaded yet");
       return;
