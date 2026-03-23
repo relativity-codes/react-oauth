@@ -4,7 +4,7 @@ import { useCallback } from 'react';
 export const useGoogleIdToken = ({onSuccess}:any) => {
   const { clientId, scriptLoadedSuccessfully } = useGoogleOAuth();
 
-  const login:()=>void = useCallback(() => {
+  const login = useCallback(() => {
     if (!scriptLoadedSuccessfully) {
       console.error("Google script not loaded yet");
       return;
@@ -24,5 +24,5 @@ export const useGoogleIdToken = ({onSuccess}:any) => {
     (window?.google as any)?.accounts?.id?.prompt();
   }, [clientId, scriptLoadedSuccessfully, onSuccess]);
 
-  return { login };
+  return login;
 };
